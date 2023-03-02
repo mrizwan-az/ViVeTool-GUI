@@ -4,7 +4,7 @@ Partial Class AboutAndSettings
     Inherits Telerik.WinControls.UI.RadForm
 
     'Form overrides dispose to clean up the component list.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -21,11 +21,9 @@ Partial Class AboutAndSettings
     'NOTE: The following procedure is required by the Windows Form Designer
     'It can be modified using the Windows Form Designer.  
     'Do not modify it using the code editor.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(AboutAndSettings))
-        Dim RadListDataItem1 As Telerik.WinControls.UI.RadListDataItem = New Telerik.WinControls.UI.RadListDataItem()
-        Dim RadListDataItem2 As Telerik.WinControls.UI.RadListDataItem = New Telerik.WinControls.UI.RadListDataItem()
         Me.RPV_Main = New Telerik.WinControls.UI.RadPageView()
         Me.RPVP_About = New Telerik.WinControls.UI.RadPageViewPage()
         Me.PB_AppImage = New System.Windows.Forms.PictureBox()
@@ -44,8 +42,13 @@ Partial Class AboutAndSettings
         Me.RL_AutoLoad = New Telerik.WinControls.UI.RadLabel()
         Me.RTS_AutoLoad = New Telerik.WinControls.UI.RadToggleSwitch()
         Me.RPVP_Language = New Telerik.WinControls.UI.RadPageViewPage()
+        Me.RDDB_Language = New Telerik.WinControls.UI.RadDropDownButton()
+        Me.RMI_L_English = New Telerik.WinControls.UI.RadMenuItem()
+        Me.RMI_L_German = New Telerik.WinControls.UI.RadMenuItem()
+        Me.RMI_L_Polish = New Telerik.WinControls.UI.RadMenuItem()
+        Me.RMI_L_Chinese = New Telerik.WinControls.UI.RadMenuItem()
+        Me.RMI_L_Indonesian = New Telerik.WinControls.UI.RadMenuItem()
         Me.RL_SelectLangauge = New Telerik.WinControls.UI.RadLabel()
-        Me.RadDropDownList1 = New Telerik.WinControls.UI.RadDropDownList()
         CType(Me.RPV_Main, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.RPV_Main.SuspendLayout()
         Me.RPVP_About.SuspendLayout()
@@ -68,26 +71,27 @@ Partial Class AboutAndSettings
         CType(Me.RL_AutoLoad, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.RTS_AutoLoad, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.RPVP_Language.SuspendLayout()
+        CType(Me.RDDB_Language, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.RL_SelectLangauge, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.RadDropDownList1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'RPV_Main
         '
+        resources.ApplyResources(Me.RPV_Main, "RPV_Main")
         Me.RPV_Main.Controls.Add(Me.RPVP_About)
         Me.RPV_Main.Controls.Add(Me.RPVP_Settings)
         Me.RPV_Main.Controls.Add(Me.RPVP_Language)
         Me.RPV_Main.DefaultPage = Me.RPVP_About
-        resources.ApplyResources(Me.RPV_Main, "RPV_Main")
         Me.RPV_Main.Name = "RPV_Main"
-        Me.RPV_Main.SelectedPage = Me.RPVP_Language
+        Me.RPV_Main.SelectedPage = Me.RPVP_About
         CType(Me.RPV_Main.GetChildAt(0), Telerik.WinControls.UI.RadPageViewStripElement).ShowItemPinButton = False
         CType(Me.RPV_Main.GetChildAt(0), Telerik.WinControls.UI.RadPageViewStripElement).StripButtons = Telerik.WinControls.UI.StripViewButtons.None
         CType(Me.RPV_Main.GetChildAt(0), Telerik.WinControls.UI.RadPageViewStripElement).ShowItemCloseButton = False
         '
         'RPVP_About
         '
+        resources.ApplyResources(Me.RPVP_About, "RPVP_About")
         Me.RPVP_About.Controls.Add(Me.PB_AppImage)
         Me.RPVP_About.Controls.Add(Me.RL_Comments)
         Me.RPVP_About.Controls.Add(Me.RL_ProductName)
@@ -96,13 +100,12 @@ Partial Class AboutAndSettings
         Me.RPVP_About.Controls.Add(Me.RL_License)
         Me.RPVP_About.Image = Global.ViVeTool_GUI.My.Resources.Resources.icons8_about_24
         Me.RPVP_About.ItemSize = New System.Drawing.SizeF(155.0!, 36.0!)
-        resources.ApplyResources(Me.RPVP_About, "RPVP_About")
         Me.RPVP_About.Name = "RPVP_About"
         '
         'PB_AppImage
         '
-        Me.PB_AppImage.Image = Global.ViVeTool_GUI.My.Resources.Resources.icons8_advertisement_page_96
         resources.ApplyResources(Me.PB_AppImage, "PB_AppImage")
+        Me.PB_AppImage.Image = Global.ViVeTool_GUI.My.Resources.Resources.icons8_advertisement_page_96
         Me.PB_AppImage.Name = "PB_AppImage"
         Me.PB_AppImage.TabStop = False
         '
@@ -133,58 +136,58 @@ Partial Class AboutAndSettings
         '
         'RPVP_Settings
         '
+        resources.ApplyResources(Me.RPVP_Settings, "RPVP_Settings")
         Me.RPVP_Settings.Controls.Add(Me.RadGroupBox1)
         Me.RPVP_Settings.Controls.Add(Me.RGB_Theming)
         Me.RPVP_Settings.Controls.Add(Me.RGB_Behaviour)
         Me.RPVP_Settings.Image = CType(resources.GetObject("RPVP_Settings.Image"), System.Drawing.Image)
         Me.RPVP_Settings.ItemSize = New System.Drawing.SizeF(89.0!, 36.0!)
-        resources.ApplyResources(Me.RPVP_Settings, "RPVP_Settings")
         Me.RPVP_Settings.Name = "RPVP_Settings"
         '
         'RadGroupBox1
         '
+        resources.ApplyResources(Me.RadGroupBox1, "RadGroupBox1")
         Me.RadGroupBox1.AccessibleRole = System.Windows.Forms.AccessibleRole.Grouping
         Me.RadGroupBox1.Controls.Add(Me.RB_ViVeTool_GUI_FeatureScanner)
         Me.RadGroupBox1.HeaderMargin = New System.Windows.Forms.Padding(1)
-        resources.ApplyResources(Me.RadGroupBox1, "RadGroupBox1")
         Me.RadGroupBox1.Name = "RadGroupBox1"
         '
         'RB_ViVeTool_GUI_FeatureScanner
         '
-        Me.RB_ViVeTool_GUI_FeatureScanner.Image = Global.ViVeTool_GUI.My.Resources.Resources.icons8_portrait_mode_scanning_24px
         resources.ApplyResources(Me.RB_ViVeTool_GUI_FeatureScanner, "RB_ViVeTool_GUI_FeatureScanner")
+        Me.RB_ViVeTool_GUI_FeatureScanner.Image = Global.ViVeTool_GUI.My.Resources.Resources.icons8_portrait_mode_scanning_24px
         Me.RB_ViVeTool_GUI_FeatureScanner.Name = "RB_ViVeTool_GUI_FeatureScanner"
         '
         'RGB_Theming
         '
+        resources.ApplyResources(Me.RGB_Theming, "RGB_Theming")
         Me.RGB_Theming.AccessibleRole = System.Windows.Forms.AccessibleRole.Grouping
         Me.RGB_Theming.Controls.Add(Me.RTB_UseSystemTheme)
         Me.RGB_Theming.Controls.Add(Me.RTB_ThemeToggle)
         Me.RGB_Theming.HeaderMargin = New System.Windows.Forms.Padding(1)
-        resources.ApplyResources(Me.RGB_Theming, "RGB_Theming")
         Me.RGB_Theming.Name = "RGB_Theming"
         '
         'RTB_UseSystemTheme
         '
-        Me.RTB_UseSystemTheme.Image = Global.ViVeTool_GUI.My.Resources.Resources.icons8_change_theme_24px
         resources.ApplyResources(Me.RTB_UseSystemTheme, "RTB_UseSystemTheme")
+        Me.RTB_UseSystemTheme.Image = Global.ViVeTool_GUI.My.Resources.Resources.icons8_change_theme_24px
         Me.RTB_UseSystemTheme.Name = "RTB_UseSystemTheme"
         Me.RTB_UseSystemTheme.ThemeName = "Fluent"
         '
         'RTB_ThemeToggle
         '
-        Me.RTB_ThemeToggle.Image = Global.ViVeTool_GUI.My.Resources.Resources.icons8_sun_24
         resources.ApplyResources(Me.RTB_ThemeToggle, "RTB_ThemeToggle")
+        Me.RTB_ThemeToggle.Image = Global.ViVeTool_GUI.My.Resources.Resources.icons8_sun_24
         Me.RTB_ThemeToggle.Name = "RTB_ThemeToggle"
         Me.RTB_ThemeToggle.ThemeName = "Fluent"
         '
         'RGB_Behaviour
         '
+        resources.ApplyResources(Me.RGB_Behaviour, "RGB_Behaviour")
         Me.RGB_Behaviour.AccessibleRole = System.Windows.Forms.AccessibleRole.Grouping
         Me.RGB_Behaviour.Controls.Add(Me.RL_AutoLoad)
         Me.RGB_Behaviour.Controls.Add(Me.RTS_AutoLoad)
         Me.RGB_Behaviour.HeaderMargin = New System.Windows.Forms.Padding(1)
-        resources.ApplyResources(Me.RGB_Behaviour, "RGB_Behaviour")
         Me.RGB_Behaviour.Name = "RGB_Behaviour"
         '
         'RL_AutoLoad
@@ -199,28 +202,53 @@ Partial Class AboutAndSettings
         '
         'RPVP_Language
         '
-        Me.RPVP_Language.Controls.Add(Me.RadDropDownList1)
-        Me.RPVP_Language.Controls.Add(Me.RL_SelectLangauge)
-        Me.RPVP_Language.ItemSize = New System.Drawing.SizeF(68.0!, 36.0!)
         resources.ApplyResources(Me.RPVP_Language, "RPVP_Language")
+        Me.RPVP_Language.Controls.Add(Me.RDDB_Language)
+        Me.RPVP_Language.Controls.Add(Me.RL_SelectLangauge)
+        Me.RPVP_Language.ItemSize = New System.Drawing.SizeF(92.0!, 36.0!)
         Me.RPVP_Language.Name = "RPVP_Language"
+        Me.RPVP_Language.SvgImageXml = resources.GetString("RPVP_Language.SvgImageXml")
+        '
+        'RDDB_Language
+        '
+        resources.ApplyResources(Me.RDDB_Language, "RDDB_Language")
+        Me.RDDB_Language.Items.AddRange(New Telerik.WinControls.RadItem() {Me.RMI_L_English, Me.RMI_L_German, Me.RMI_L_Polish, Me.RMI_L_Chinese, Me.RMI_L_Indonesian})
+        Me.RDDB_Language.Name = "RDDB_Language"
+        '
+        'RMI_L_English
+        '
+        resources.ApplyResources(Me.RMI_L_English, "RMI_L_English")
+        Me.RMI_L_English.Name = "RMI_L_English"
+        Me.RMI_L_English.SvgImageXml = resources.GetString("RMI_L_English.SvgImageXml")
+        '
+        'RMI_L_German
+        '
+        resources.ApplyResources(Me.RMI_L_German, "RMI_L_German")
+        Me.RMI_L_German.Name = "RMI_L_German"
+        Me.RMI_L_German.SvgImageXml = resources.GetString("RMI_L_German.SvgImageXml")
+        '
+        'RMI_L_Polish
+        '
+        resources.ApplyResources(Me.RMI_L_Polish, "RMI_L_Polish")
+        Me.RMI_L_Polish.Name = "RMI_L_Polish"
+        Me.RMI_L_Polish.SvgImageXml = resources.GetString("RMI_L_Polish.SvgImageXml")
+        '
+        'RMI_L_Chinese
+        '
+        resources.ApplyResources(Me.RMI_L_Chinese, "RMI_L_Chinese")
+        Me.RMI_L_Chinese.Name = "RMI_L_Chinese"
+        Me.RMI_L_Chinese.SvgImageXml = resources.GetString("RMI_L_Chinese.SvgImageXml")
+        '
+        'RMI_L_Indonesian
+        '
+        resources.ApplyResources(Me.RMI_L_Indonesian, "RMI_L_Indonesian")
+        Me.RMI_L_Indonesian.Name = "RMI_L_Indonesian"
+        Me.RMI_L_Indonesian.SvgImageXml = resources.GetString("RMI_L_Indonesian.SvgImageXml")
         '
         'RL_SelectLangauge
         '
         resources.ApplyResources(Me.RL_SelectLangauge, "RL_SelectLangauge")
         Me.RL_SelectLangauge.Name = "RL_SelectLangauge"
-        '
-        'RadDropDownList1
-        '
-        Me.RadDropDownList1.DropDownAnimationEnabled = True
-        RadListDataItem1.Image = Global.ViVeTool_GUI.My.Resources.Resources.icons8_moon_and_stars_24
-        RadListDataItem1.Text = "English (Default)"
-        RadListDataItem2.Text = "Deutsch"
-        Me.RadDropDownList1.Items.Add(RadListDataItem1)
-        Me.RadDropDownList1.Items.Add(RadListDataItem2)
-        resources.ApplyResources(Me.RadDropDownList1, "RadDropDownList1")
-        Me.RadDropDownList1.Name = "RadDropDownList1"
-        Me.RadDropDownList1.SortStyle = Telerik.WinControls.Enumerations.SortStyle.Descending
         '
         'AboutAndSettings
         '
@@ -260,9 +288,8 @@ Partial Class AboutAndSettings
         CType(Me.RL_AutoLoad, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.RTS_AutoLoad, System.ComponentModel.ISupportInitialize).EndInit()
         Me.RPVP_Language.ResumeLayout(False)
-        Me.RPVP_Language.PerformLayout()
+        CType(Me.RDDB_Language, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.RL_SelectLangauge, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.RadDropDownList1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
@@ -286,6 +313,11 @@ Partial Class AboutAndSettings
     Friend WithEvents RTB_ThemeToggle As WinControls.UI.RadToggleButton
     Friend WithEvents RTB_UseSystemTheme As WinControls.UI.RadToggleButton
     Friend WithEvents RPVP_Language As WinControls.UI.RadPageViewPage
-    Friend WithEvents RadDropDownList1 As WinControls.UI.RadDropDownList
     Friend WithEvents RL_SelectLangauge As WinControls.UI.RadLabel
+    Friend WithEvents RDDB_Language As WinControls.UI.RadDropDownButton
+    Friend WithEvents RMI_L_English As WinControls.UI.RadMenuItem
+    Friend WithEvents RMI_L_German As WinControls.UI.RadMenuItem
+    Friend WithEvents RMI_L_Polish As WinControls.UI.RadMenuItem
+    Friend WithEvents RMI_L_Chinese As WinControls.UI.RadMenuItem
+    Friend WithEvents RMI_L_Indonesian As WinControls.UI.RadMenuItem
 End Class
